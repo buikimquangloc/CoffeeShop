@@ -1,17 +1,18 @@
 <template>
-    <div style="width: 145px; z-index: 10;">
-        <div class="card-header bg-success text-center font-weight-bold text-light" style="width: 100%;">
-            DANH MỤC
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" v-for="(category, index) in categories" :key="category._id"
-                @click="setSelected(category)" :class="{
-                    active: selectedCategory && category._id === selectedCategory._id,
-                }">
-                {{ category.name }}
-            </li>
-        </ul>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 160px;">
+        Danh Mục
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+        <a class="dropdown-item" href="#" v-for="(category, index) in categories" :key="category._id"
+            @click="setSelected(category)" :class="{
+                active: selectedCategory && category._id === selectedCategory._id,
+            }">
+            {{ category.name }}
+        </a>
     </div>
+</div>
+
 </template>
 
 <script>

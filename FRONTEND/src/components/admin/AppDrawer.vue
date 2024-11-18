@@ -1,7 +1,7 @@
 <template>
-    <nav class="w3-sidebar w3-white" style="z-index: 3; width: 300px; z-index: 100;">
+    <nav class="w3-sidebar w3-white" style="z-index: 3; width: 250px; z-index: 100;">
         <br />
-        <div class="w3-container w3-row">
+        <div class="w2-container w3-row">
             <div>
                 <img src="../../assets/img/logo/logo-quan-cafe-8.png" style="width: 100px; margin-left: 70px; border-radius: 50%;" />
             </div>

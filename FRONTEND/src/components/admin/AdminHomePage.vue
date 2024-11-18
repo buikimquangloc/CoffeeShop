@@ -3,7 +3,7 @@
         <AppBar></AppBar>
         <AppDrawer></AppDrawer>
         <div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor: pointer"></div>
-        <div class="w3-main" style="margin-left: 310px; ">
+        <div class="w3-main" style="margin-left: 280px; margin-right: 20px;  ">
             <router-view v-slot="{ Component }">
                 <transition name="fade">
                     <component :is="Component" />

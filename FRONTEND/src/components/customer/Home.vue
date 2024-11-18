@@ -2,7 +2,48 @@
   <head>
     <title>Trang Chủ</title>
   </head>
+  
   <div class="container">
+    <div class="">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../assets/img/slider/poster1.jpg" class="d-block w-100" alt="..." style="height: 400px;">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p> -->
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/img/slider/poster2.jpg" class="d-block w-100" alt="..." style="height: 400px;">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p> -->
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/img//slider/poster3.jpg" class="d-block w-100" alt="..." style="height: 400px;">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p> -->
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </button>
+</div>
+  </div>
     <div class="row mt-5">
       <div class="col-12 text-center">
         <div>
@@ -11,68 +52,59 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row d-flex justify-content-center">
       <div class="col-3">
         <div>
           <div>
-            <a href="#"><img src="../../assets/img/product/product1.jpg" alt="#" /></a>
+            <a href="#"><img src="../../assets/img/product/Sodabacha1.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div>
           <div>
-            <a href="#"><img src="../../assets/img/product/product2.jpg" alt="#" /></a>
+            <a href="#"><img src="../../assets/img/product/Sodachanh1.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div>
           <div>
-            <a href="#"><img src="../../assets/img/product/product3.jpg" alt="#" /></a>
+            <a href="#"><img src="../../assets/img/product/epcam1.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
           </div>
         </div>
       </div>
       <div class="col-3">
         <div>
           <div>
-            <a href="#"><img src="../../assets/img/product/product4.jpg" alt="#" /></a>
+            <a href="#"><img src="../../assets/img/product/trasuachantranchauduongden1.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mt-4">
+        <div>
+          <div>
+            <a href="#"><img src="../../assets/img/product/sinhtobo1.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mt-4">
+        <div>
+          <div>
+            <a href="#"><img src="../../assets/img/product/tradaocamsa1.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 mt-4">
+        <div>
+          <div>
+            <a href="#"><img src="../../assets/img/product/cafebacxiu1.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="row mt-5">
-      <div class="col-12 text-center">
-        <div>
-          <h2>Quy trình chế biến</h2>
-          <p>Các sản phẩm được chế biến bởi chuyên gia</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-4">
-        <div>
-          <div>
-            <a href="#"><img width="100%" src="../../assets/img/bg/banner8.jpg" alt="#" /></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div>
-          <div>
-            <a href="#"><img width="100%" src="../../assets/img/bg/banner9.jpg" alt="#" /></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div>
-          <div>
-            <a href="#"><img width="100%" src="../../assets/img/bg/banner10.jpg" alt="#" /></a>
-          </div>
-        </div>
-      </div>
-    </div>
+        
 
     <div class="row mt-5">
       <div class="col-12 text-center">
@@ -83,40 +115,39 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-3">
+    <div class="row d-flex justify-content-center">
+      <div class="col-3 m-2">
         <div>
           <div>
-            <a href="#"><img width="105%" height="250px"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt60ARPvwsZ_hgx172XVr3Uk-oOjJaCiUnHQ&usqp=CAU"
-                alt="#" /></a>
+            <a href="#"><img src="../../assets/img/shop/quannuoc1.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-3 m-2">
         <div>
           <div>
-            <a href="#"><img width="105%" height="250px"
-                src="https://media.cooky.vn/images/blog-2016/cac-dia-chi-cua-hang-ban-dung-cu-va-nguyen-vat-lieu-lam-banh-o-da-nang%202.JPG"
-                alt="#" /></a>
+            <a href="#"><img src="../../assets/img/shop/quannuoc2.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-3 m-2">
         <div>
           <div>
-            <a href="#"><img width="105%" height="250px"
-                src="https://cdn.tgdd.vn/Files/2022/01/06/1409471/5-tiem-banh-hamburger-sieu-ngon-noi-tieng-nhat-nhi-tp-hcm-202201061604179292.jpg"
-                alt="#" /></a>
+            <a href="#"><img src="../../assets/img/shop/quannuoc3.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
           </div>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col-3 m-2">
         <div>
           <div>
-            <a href="#"><img width="105%" height="250px"
-                src="https://th.bing.com/th/id/OIP.0u3_zoyXPHI518vMYABTiQAAAA?w=264&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                alt="#" /></a>
+            <a href="#"><img src="../../assets/img/shop/quannuoc4.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 m-2">
+        <div>
+          <div>
+            <a href="#"><img src="../../assets/img/shop/quannuoc5.jpg" alt="#" style="width: 280px; height: 340px;"/></a>
           </div>
         </div>
       </div>

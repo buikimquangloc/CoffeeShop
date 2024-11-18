@@ -3,7 +3,7 @@
         <title>Sản Phẩm</title>
     </head>
     <div class="container row">
-        <div class="product-card col-3 mb-3" v-for="(product, index) in products" :key="product._id">
+        <div class="product-card col-3 mb-4" v-for="(product, index) in products" :key="product._id">
             <div class="product-content">
                 <img :src="'http://localhost:3000/' + product.image" alt="" />
                 <h5 class="title text-center" style="font-size: 20px">
@@ -19,7 +19,7 @@
       ">
                     {{ (product.price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' }) }}
                 </div>
-                <div class="price text-danger text-center" style="
+                <!-- <div class="price text-danger text-center" style="
         font-size: 16px;
         font-weight: normal;
         font-family: Verdana, sans-serif;
@@ -30,7 +30,7 @@
                         ? "HẾT HÀNG"
                         : "Số lượng kho:" + product.quantity_remain
                     }}
-                </div>
+                </div> -->
 
                 <div class="card-footer text-center ">
                     <div class="input-group quantity">
