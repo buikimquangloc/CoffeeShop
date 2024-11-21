@@ -6,7 +6,7 @@
         <div class="page-title">
             <div class="row mb-3">
                 <div class="col-12  order-md-1 order-last">
-                    <h3 class="text-center text-primary py-2">QUẢN LÝ HÓA ĐƠN</h3>
+                    <h4 class="text-center text-primary pt-4">QUẢN LÝ HÓA ĐƠN</h4>
                 </div>
             </div>
         </div>

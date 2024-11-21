@@ -1,42 +1,44 @@
 <template>
-    <Form @submit="submitProduct" :validation-schema="productFormSchema" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="name">Tên</label>
-            <Field name="name" type="text" class="form-control" v-model="productLocal.name" />
-            <ErrorMessage name="name" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <label for="description">Mô tả</label>
-            <Field name="description" type="text" class="form-control" v-model="productLocal.description" />
-            <ErrorMessage name="description" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <label for="price">Giá</label>
-            <Field name="price" type="number" class="form-control" v-model="productLocal.price" />
-            <ErrorMessage name="price" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <label for="quantity">Số lượng</label>
-            <Field name="quantity" type="number" class="form-control" v-model="productLocal.quantity" />
-            <ErrorMessage name="quantity" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <label for="image">Hình ảnh</label>
-            <input type="file" name="image" class="form-control" @change="onFileChange" />
-            <ErrorMessage name="image" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <label for="category">Danh mục</label>
-            <select name="category" class="form-control" v-model="productLocal.category_id">
-                <option :value="null">--Chọn danh mục--</option>
-                <option v-for="category in categories" :value="category._id">{{ category.name }}</option>
-            </select>
-            <ErrorMessage name="category" class="error-feedback" />
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary">Lưu</button>
-        </div>
-    </Form>
+    <div style="border: 1px solid black; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px;" >
+        <Form @submit="submitProduct" :validation-schema="productFormSchema" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Tên</label>
+                <Field name="name" type="text" class="form-control" v-model="productLocal.name" />
+                <ErrorMessage name="name" class="error-feedback" />
+            </div>
+            <div class="form-group">
+                <label for="description">Mô tả</label>
+                <Field name="description" type="text" class="form-control" v-model="productLocal.description" />
+                <ErrorMessage name="description" class="error-feedback" />
+            </div>
+            <div class="form-group">
+                <label for="price">Giá</label>
+                <Field name="price" type="number" class="form-control" v-model="productLocal.price" />
+                <ErrorMessage name="price" class="error-feedback" />
+            </div>
+            <div class="form-group">
+                <label for="quantity">Số lượng</label>
+                <Field name="quantity" type="number" class="form-control" v-model="productLocal.quantity" />
+                <ErrorMessage name="quantity" class="error-feedback" />
+            </div>
+            <div class="form-group">
+                <label for="image">Hình ảnh</label>
+                <input type="file" name="image" class="form-control" @change="onFileChange" />
+                <ErrorMessage name="image" class="error-feedback" />
+            </div>
+            <div class="form-group">
+                <label for="category">Danh mục</label>
+                <select name="category" class="form-control" v-model="productLocal.category_id">
+                    <option :value="null">--Chọn danh mục--</option>
+                    <option v-for="category in categories" :value="category._id">{{ category.name }}</option>
+                </select>
+                <ErrorMessage name="category" class="error-feedback" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Lưu</button>
+            </div>
+        </Form>
+    </div>
 </template>
 
 <script>

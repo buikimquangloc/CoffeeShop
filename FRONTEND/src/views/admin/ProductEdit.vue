@@ -4,7 +4,7 @@
     </head>
     <div class="container">
         <div v-if="product" class="page col-8 mx-auto">
-            <h4 class="text-center text-primary">Chỉnh sửa Sản phẩm</h4>
+            <h4 class="text-center text-primary p-3">Chỉnh sửa Sản phẩm</h4>
             <ProductForm :product="product" :categories="categories" @submit:product="updateProduct" />
         </div>
     </div>

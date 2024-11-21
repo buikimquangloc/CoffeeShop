@@ -4,7 +4,7 @@
     </head>
     <div class="container">
         <div class="page col-8 mx-auto">
-            <h4 class="text-center text-primary">Thêm sản phẩm</h4>
+            <h3 class="text-center text-primary p-3">Thêm sản phẩm</h3>
             <ProductForm :product="{}" :categories="categories" @submit:product="addProduct" />
         </div>
     </div>

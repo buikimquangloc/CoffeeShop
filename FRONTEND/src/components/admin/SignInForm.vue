@@ -5,7 +5,7 @@
     <Form @submit="submitSignIn" :validation-schema="signInFormSchema" style="height: 100%;">
         <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
             <div class="w-25 p-4 formlogin">
-                <h3 class="text-center mt-5 text-primary fw-bold">ĐĂNG NHẬP</h3>
+                <h3 class="text-center mt-3">ĐĂNG NHẬP</h3>
                 <div class="form-group">
                     <label for="username">Tài khoản</label>
                     <Field name="username" type="text" class="form-control" v-model="signInLocal.username" />

@@ -1,71 +1,73 @@
 <template>
-    <Form @submit="submitSignUp" :validation-schema="signUpFormSchema" class="w-50 m-auto">
-        <h4 class="text-center">Đăng ký</h4>
-        <div class="row">
-            <div class="col">
-                
-                <div class="form-group">
-                    <label for="name">Tên</label>
-                    <Field name="name" type="text" class="form-control" v-model="signUpLocal.name" />
-                    <ErrorMessage name="name" class="error-feedback" />
-                </div>
-
-                <div class="form-group">
-                    <label for="">Giới tính</label>
-                    <div class="form-check form-check-inline">
-                        <Field name="sex" type="radio" class="form-check-input" value="1" v-model="signUpLocal.sex" />Nam
+    <div class=" m-4 d-flex justify-content-center">
+        <Form @submit="submitSignUp" :validation-schema="signUpFormSchema" class="w-50 m-auto p-5"  style=" border-radius: 5px; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+            <h4 class="text-center">Đăng ký</h4>
+            <div class="row">
+                <div class="col">
+                    
+                    <div class="form-group">
+                        <label for="name">Tên</label>
+                        <Field name="name" type="text" class="form-control" v-model="signUpLocal.name" />
+                        <ErrorMessage name="name" class="error-feedback" />
                     </div>
-                    <div class="form-check form-check-inline">
-                        <Field name="sex" type="radio" class="form-check-input ml-4" value="0" v-model="signUpLocal.sex" />
-                        Nữ
+
+                    <div class="form-group">
+                        <label for="">Giới tính</label>
+                        <div class="form-check form-check-inline">
+                            <Field name="sex" type="radio" class="form-check-input" value="1" v-model="signUpLocal.sex" />Nam
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <Field name="sex" type="radio" class="form-check-input ml-4" value="0" v-model="signUpLocal.sex" />
+                            Nữ
+                        </div>
+                        <ErrorMessage name="sex" class="error-feedback d-block" />
                     </div>
-                    <ErrorMessage name="sex" class="error-feedback d-block" />
-                </div>
 
-                <div class="form-group">
-                    <label for="birth">Ngày sinh</label>
-                    <Field name="birth" type="date" class="form-control" v-model="signUpLocal.birth" />
-                    <ErrorMessage name="birth" class="error-feedback" />
-                </div>
+                    <div class="form-group">
+                        <label for="birth">Ngày sinh</label>
+                        <Field name="birth" type="date" class="form-control" v-model="signUpLocal.birth" />
+                        <ErrorMessage name="birth" class="error-feedback" />
+                    </div>
 
-                <div class="form-group">
-                    <label for="address">Địa chỉ</label>
-                    <Field as="textarea" name="address" class="form-control" v-model="signUpLocal.address" />
-                    <ErrorMessage name="address" class="error-feedback" />
+                    <div class="form-group">
+                        <label for="address">Địa chỉ</label>
+                        <Field as="textarea" name="address" class="form-control" v-model="signUpLocal.address" />
+                        <ErrorMessage name="address" class="error-feedback" />
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="phone">Số điện thoại</label>
+                        <Field name="phone" type="text" class="form-control" v-model="signUpLocal.phone" />
+                        <ErrorMessage name="phone" class="error-feedback" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <Field name="email" type="email" class="form-control" v-model="signUpLocal.email" />
+                        <ErrorMessage name="email" class="error-feedback" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Mật khẩu</label>
+                        <Field name="password" type="password" class="form-control" v-model="signUpLocal.password" />
+                        <ErrorMessage name="password" class="error-feedback" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordConfirmation">Xác nhận mật khẩu</label>
+                        <Field name="passwordConfirmation" type="password" class="form-control"
+                            v-model="signUpLocal.passwordConfirmation" />
+                        <ErrorMessage name="passwordConfirmation" class="error-feedback" />
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary w-100">Đăng ký</button>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="phone">Số điện thoại</label>
-                    <Field name="phone" type="text" class="form-control" v-model="signUpLocal.phone" />
-                    <ErrorMessage name="phone" class="error-feedback" />
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <Field name="email" type="email" class="form-control" v-model="signUpLocal.email" />
-                    <ErrorMessage name="email" class="error-feedback" />
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Mật khẩu</label>
-                    <Field name="password" type="password" class="form-control" v-model="signUpLocal.password" />
-                    <ErrorMessage name="password" class="error-feedback" />
-                </div>
-
-                <div class="form-group">
-                    <label for="passwordConfirmation">Xác nhận mật khẩu</label>
-                    <Field name="passwordConfirmation" type="password" class="form-control"
-                        v-model="signUpLocal.passwordConfirmation" />
-                    <ErrorMessage name="passwordConfirmation" class="error-feedback" />
-                </div>
-
-                <div class="form-group">
-                    <button class="btn btn-primary w-100">Đăng ký</button>
-                </div>
-            </div>
-        </div>
-    </Form>
+        </Form>
+    </div>
 </template>
 
 <script>

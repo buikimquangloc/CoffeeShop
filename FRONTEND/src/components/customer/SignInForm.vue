@@ -1,12 +1,12 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-md-5 ms-5">
-                <img src="https://img1.kienthucvui.vn/uploads/2022/01/02/anh-chao-mung-cho-slide_105115098.jpg"
-                    class="img-fluid" alt="Sign In" />
-            </div>
-            <div class="col-md-6">
-                <Form @submit="submitSignIn" :validation-schema="signInFormSchema" class="w-75 m-auto">
+        <!-- <div class=" "> -->
+            <!-- <div class="col-md-5 ms-5">
+                <img src=""
+                    class="img-fluid" alt="Sign In" style=" width: 400px; margin-top: 10px; border: 1px black solid;"/>
+            </div> -->
+            <div class="container m-4 d-flex justify-content-center" >
+                <Form @submit="submitSignIn" :validation-schema="signInFormSchema" class="w-50 m-auto p-5 " style=" border-radius: 5px; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;" >
                     <h4 class="text-center">Đăng nhập</h4>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -18,12 +18,12 @@
                         <Field name="password" type="password" class="form-control" v-model="signInLocal.password" />
                         <ErrorMessage name="password" class="error-feedback" />
                     </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary w-100">Đăng nhập</button>
+                    <div class="form-group mb-5">
+                        <button class="btn btn-primary w-100 mt-3">Đăng nhập</button>
                     </div>
                 </Form>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
 </template>
   

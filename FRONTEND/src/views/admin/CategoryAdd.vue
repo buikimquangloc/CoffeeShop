@@ -4,7 +4,7 @@
     </head>
     <div class="container">
         <div class="page col-8 mx-auto">
-            <h4 class="text-center text-primary">Thêm Danh mục</h4>
+            <h4 class="text-center text-primary p-3">Thêm Danh mục</h4>
             <CategoryForm :category="{}" @submit:category="addCategory" />
         </div>
     </div>

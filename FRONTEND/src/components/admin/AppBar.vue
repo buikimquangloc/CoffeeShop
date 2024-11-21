@@ -1,12 +1,12 @@
 <template>
     <div v-if="store.isAuthenticatedAdmin" class="appbar">
-        <div>
-            <nav class="navbar navbar-dark bg-dark position-fixed fixed-top" style="z-index: 10;">
+        <div class="">
+            <nav class="navbar navbar-dark  position-fixed fixed-top p-3" style="z-index: 10; background-color: #000055; box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;">
                 <button class="navbar-toggler" type="button">
                     <span class="navbar-toggler-icon ms-2"></span>
                 </button>
                 <div class="btn-group">
-                    <button class="btn btn-primary me-2" type="button" @click="signOut">Đăng xuất</button>
+                    <button class="btn btn-primary me-2" style="border-radius: 10px;" type="button" @click="signOut">Đăng xuất</button>
                 </div>
             </nav>
         </div>

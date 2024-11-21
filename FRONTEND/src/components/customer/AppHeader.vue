@@ -1,7 +1,7 @@
 <template>
   <div class="row header">
     <div class="col-2 header-logo">
-      <img class="logo" src="../../assets/img/logo/logo-quan-cafe-8.png" />
+      <img class="logo" src="../../assets/img/logo/logo-quan-cafe-8.png" style="width: 100px;"/>
     </div>
     <div class="col-10">
       <nav class="navbar navbar-expand" style="border: none">

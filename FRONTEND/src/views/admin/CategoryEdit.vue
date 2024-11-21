@@ -3,7 +3,7 @@
         <title>Chỉnh Sửa Danh Mục</title>
     </head>
     <div v-if="category" class="page col-8 mx-auto">
-        <h4 class="text-center text-primary">Hiệu chỉnh Danh mục</h4>
+        <h4 class="text-center text-primary p-3">Hiệu chỉnh Danh mục</h4>
         <CategoryForm :category="category" @submit:category="updateCategory" @delete:category="deleteCategory" />
     </div>
 </template>
