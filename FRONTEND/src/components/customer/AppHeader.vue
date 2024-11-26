@@ -127,7 +127,7 @@ export default defineComponent({
 
       try {
         // Gọi API tìm kiếm
-        const response = await productService.searchProducts(searchText.value);
+        const response = await productService.search(searchText.value);
         searchResults.value = response || []; // Lưu kết quả vào searchResults
       } catch (error) {
         console.error("Lỗi khi tìm kiếm:", error);
