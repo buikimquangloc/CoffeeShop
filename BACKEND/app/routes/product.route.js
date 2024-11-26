@@ -25,4 +25,7 @@ router.route("/:id")
     .patch(upload.single("image"), products.update)
     .delete(products.delete);
 
+router.route("/search")
+    .get(products.searchProducts)
+
 module.exports = router;

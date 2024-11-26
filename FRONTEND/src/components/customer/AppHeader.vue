@@ -1,7 +1,7 @@
 <template>
   <div class="row header">
     <div class="col-2 header-logo">
-      <img class="logo" src="../../assets/img/logo/logo-quan-cafe-8.png" style="width: 100px;"/>
+      <img class="logo" src="../../assets/img/logo/logo-quan-cafe-8.png" style="width: 100px;" />
     </div>
     <div class="col-10">
       <nav class="navbar navbar-expand" style="border: none">
@@ -10,85 +10,41 @@
             <ul class="navbar-nav me-auto">
               <router-link :to="{ name: 'home' }">
                 <li class="nav-item">
-                  <p class="nav-link active" style="margin: 0; font-size: 18px">
-                    Trang chủ
-                  </p>
+                  <p class="nav-link active" style="margin: 0; font-size: 18px">Trang chủ</p>
                 </li>
               </router-link>
-
-              <router-link
-                style="text-decoration: none"
-                :to="{ name: 'product' }"
-              >
+              <router-link style="text-decoration: none" :to="{ name: 'product' }">
                 <li class="nav-item">
-                  <p class="nav-link active" style="margin: 0; font-size: 18px">
-                    Cửa hàng
-                  </p>
+                  <p class="nav-link active" style="margin: 0; font-size: 18px">Cửa hàng</p>
                 </li>
               </router-link>
-
-              <router-link
-                style="text-decoration: none"
-                :to="{ name: 'about' }"
-              >
+              <router-link style="text-decoration: none" :to="{ name: 'about' }">
                 <li class="nav-item">
-                  <p class="nav-link active" style="margin: 0; font-size: 18px">
-                    Giới Thiệu
-                  </p>
+                  <p class="nav-link active" style="margin: 0; font-size: 18px">Giới Thiệu</p>
                 </li>
               </router-link>
-
-              <router-link
-                style="text-decoration: none"
-                :to="{ name: 'contact' }"
-              >
+              <router-link style="text-decoration: none" :to="{ name: 'contact' }">
                 <li class="nav-item">
-                  <p class="nav-link active" style="margin: 0; font-size: 18px">
-                    Liên Hệ
-                  </p>
+                  <p class="nav-link active" style="margin: 0; font-size: 18px">Liên Hệ</p>
                 </li>
               </router-link>
-
-              <router-link
-                v-if="store.isAuthenticatedCustomer"
-                style="text-decoration: none"
-                :to="{ name: 'cart' }"
-              >
+              <router-link v-if="store.isAuthenticatedCustomer" style="text-decoration: none" :to="{ name: 'cart' }">
                 <li class="nav-item">
-                  <p class="nav-link active" style="margin: 0; font-size: 18px">
-                    Giỏ hàng
-                  </p>
+                  <p class="nav-link active" style="margin: 0; font-size: 18px">Giỏ hàng</p>
                 </li>
               </router-link>
-
-              <router-link
-                v-if="store.isAuthenticatedCustomer"
-                style="text-decoration: none"
-                :to="{ name: 'order' }"
-              >
+              <router-link v-if="store.isAuthenticatedCustomer" style="text-decoration: none" :to="{ name: 'order' }">
                 <li class="nav-item">
-                  <p class="nav-link active" style="margin: 0; font-size: 18px">
-                    Đơn hàng
-                  </p>
+                  <p class="nav-link active" style="margin: 0; font-size: 18px">Đơn hàng</p>
                 </li>
               </router-link>
             </ul>
           </div>
-
-          <form class="d-flex ms-5">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Tìm kiếm"
-              name="tukhoa"
-            />
-            <button name="search_product" type="submit">Tìm</button>
+          <form class="d-flex ms-5" @submit.prevent="handleSearch">
+            <input v-model="searchText" class="form-control me-2" type="search" placeholder="Tìm kiếm" />
+            <button type="submit">Tìm</button>
           </form>
-
-          <ul
-            class="navbar-nav me-auto mb-2 mb-lg-0"
-            v-if="store.isAuthenticatedCustomer == false"
-          >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" v-if="store.isAuthenticatedCustomer == false">
             <router-link style="text-decoration: none" :to="{ name: 'signin' }">
               <li class="nav-item">
                 <a class="nav-link active">Đăng Nhập</a>
@@ -100,20 +56,13 @@
               </li>
             </router-link>
           </ul>
-
           <div v-else-if="store.isAuthenticatedCustomer">
             <nav class="navbar navbar-dark ms-2" style="border: none">
               <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon ms-2"></span>
               </button>
               <div class="btn-group">
-                <button
-                  class="btn btn-primary me-2"
-                  type="button"
-                  @click="signOut"
-                >
-                  Đăng xuất
-                </button>
+                <button class="btn btn-primary me-2" type="button" @click="signOut">Đăng xuất</button>
               </div>
             </nav>
           </div>
@@ -123,18 +72,40 @@
   </div>
   <div class="container" style="height: 80px">
     <hr />
+    <!-- Hiển thị kết quả tìm kiếm -->
+    <div v-if="searchResults.length">
+      <h2>Kết quả tìm kiếm:</h2>
+      <ul>
+        <li v-for="product in searchResults" :key="product.id">
+          {{ product.name }} - {{ product.description }}
+        </li>
+      </ul>
+    </div>
+    <div v-else-if="isLoading">
+      <p>Đang tìm kiếm...</p>
+    </div>
+    <div v-else>
+      <p>Không tìm thấy kết quả nào.</p>
+    </div>
   </div>
 </template>
 
 <script>
-import { useCustomerStore } from "@/stores/store";
+import { ref } from "vue";
 import { defineComponent } from "vue";
+import { useCustomerStore } from "@/stores/store";
 import { useRouter } from "vue-router";
 import customerService from "@/services/customer.service";
+import productService from "@/services/product.service"; // API sản phẩm
+
 export default defineComponent({
   setup() {
     const store = useCustomerStore();
     const router = useRouter();
+    const searchText = ref(""); // Từ khóa tìm kiếm
+    const searchResults = ref([]); // Kết quả tìm kiếm
+    const isLoading = ref(false); // Trạng thái loading
+
     const signOut = async () => {
       try {
         const headers = {
@@ -148,13 +119,36 @@ export default defineComponent({
         console.log(error);
       }
     };
+
+    // Gọi API tìm kiếm
+    const handleSearch = async () => {
+      if (!searchText.value.trim()) return; // Không thực hiện nếu không có từ khóa
+      isLoading.value = true;
+
+      try {
+        // Gọi API tìm kiếm
+        const response = await productService.searchProducts(searchText.value);
+        searchResults.value = response || []; // Lưu kết quả vào searchResults
+      } catch (error) {
+        console.error("Lỗi khi tìm kiếm:", error);
+        searchResults.value = []; // Đảm bảo searchResults không bị undefined
+      } finally {
+        isLoading.value = false;
+      }
+    };
+
     return {
       store,
       signOut,
+      searchText,
+      searchResults,
+      handleSearch,
+      isLoading,
     };
   },
 });
 </script>
+
 
 <style>
 .navbar {

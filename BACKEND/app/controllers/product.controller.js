@@ -125,3 +125,13 @@ exports.findByCategory = async (req, res) => {
     }
 };
 
+
+exports.searchProducts = async (req, res) => {
+    try {
+        const { q } = req.query; // Lấy từ khóa từ query string
+        const results = await ProductService.searchProducts(q); // Gọi Service
+        res.status(200).json(results); // Trả kết quả
+    } catch (error) {
+        res.status(400).json({ message: error.message }); // Xử lý lỗi
+    }
+}

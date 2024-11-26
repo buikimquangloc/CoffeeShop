@@ -116,6 +116,15 @@ class ProductService {
         const cursor = await this.Product.find(filter);
         return await cursor.toArray();
     }
+    async searchProducts(query) {
+        if (!query) throw new Error("Query không được để trống");
+
+        return products.filter(product =>
+            product.name.toLowerCase().includes(query.toLowerCase())
+        );
+    }
+
+    
 }
 
 module.exports = ProductService;
