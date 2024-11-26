@@ -118,11 +118,15 @@ class ProductService {
     }
     async searchProducts(query) {
         if (!query) throw new Error("Query không được để trống");
-
-        return products.filter(product =>
-            product.name.toLowerCase().includes(query.toLowerCase())
-        );
+    
+        const filter = {
+            name: { $regex: query, $options: "i" }, 
+        };
+    
+        const cursor = await this.Product.find(filter);
+        return await cursor.toArray();
     }
+    
 
     
 }
